@@ -17,7 +17,7 @@ while left_attempts > 0:
     else:
         print('Холодно')
     print('Попробуй число ', end='')
-    print('больше' if num_to_guess > attempt else 'меньше')
+    print('побольше' if num_to_guess > attempt else 'поменьше')
     print(f'Осталось попыток: {left_attempts}')
 if won:
     print(
