@@ -12,17 +12,15 @@ while True:
         print(
             f'''Варианта {select} не существует. Выберите {'/'.join(options)}''')
         continue
+    bot_select = choice(list(options.keys()))
+    print(f'Ваш выбор: {select}, Выбор робота: {bot_select}')
+    if bot_select == select:
+        print('Ничья')
+    elif options[select] == bot_select:
+        print('Вы выиграли!')
     else:
-        bot_select = choice(list(options.keys()))
-        print(f'Ваш выбор: {select}, Выбор робота: {bot_select}')
-        if bot_select == select:
-            print('Ничья')
-        elif options[select] == bot_select:
-            print('Вы выиграли!')
-        else:
-            print('Победил робот')
+        print('Победил робот')
     play_again = input('Сыграть еще раз? [Да/Нет] ').lower()
     if play_again == 'да':
         continue
-    else:
-        break
+    break
