@@ -1,9 +1,32 @@
-start = int(input())
-end = int(input())
+# Программа основана на идее состояний
+# Состояние 0 - начальное состояние
+# Состояние 1 - состояние накопления суммы
+# Состояние 2 - конец программы
 
-sum = 0
+acc = 0
+state = 0
+counter = 1
 
-for i in range(start, end + 1):
-    sum += i
-
-print(sum)
+print('Доступные команды: start, end')
+while True:
+    match (state):
+        case 0:
+            command = input('Введите команду start ')
+            if command == 'start':
+                state = 1
+            else:
+                print('Неверный ввод. Я жду команду start')
+        case 1:
+            numOrEnd = input(f'{counter}: ')
+            if numOrEnd == 'end':
+                state = 2
+            else:
+                try:
+                    num = int(numOrEnd)
+                    counter += 1
+                    acc += num
+                except:
+                    print('Неверный ввод. Я жду число')
+        case 2:
+            print(acc)
+            break
