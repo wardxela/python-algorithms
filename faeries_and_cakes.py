@@ -11,14 +11,10 @@ parsed_data = list(map(float, data.split('\n')))
 # Здесь будем хранить подозреваемых фей
 suspected_faeries = []
 # По индексу будем определять старшинство феи
-faeries_map = {
-    1: 'Младшая',
-    2: 'Средняя',
-    3: 'Старшая'
-}
-for i, faery_efficiency in enumerate(faeries_efficiency, 1):
+faeries = ['Младшая', 'Средняя', 'Старшая']
+for i, faery_efficiency in enumerate(faeries_efficiency):
     if faery_efficiency * minutes >= cakes_count:
-        suspected_faeries.append(f'{faeries_map[i]} феечка')
+        suspected_faeries.append(f'{faeries[i]} феечка')
 if len(suspected_faeries) == 0:
     print('Не они!')
 else:
